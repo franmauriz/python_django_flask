@@ -4,3 +4,4 @@ cuadrado = Cuadrado(4,"Rojo")
 
 print(cuadrado.area())
 
+print(Cuadrado.mro())
