@@ -6,11 +6,15 @@ con = psycopg2.connect(user='postgres',
                        port='5432',
                        database='test_db')
 cursor = con.cursor()
-sql = 'select id_persona, nombre from persona where id_persona = %s order by id_persona desc'
-id_persona = 1
-llave_primaria = (id_persona,)
-cursor.execute(sql,llave_primaria)
-registros = cursor.fetchall()
-print(registros[0][1])
+sql = 'DELETE FROM persona WHERE id_persona = %s'
+
+valores = (10,)
+
+cursor.execute(sql, valores)
+
+# guardamos la informacin en la base de datos
+con.commit()
+registros_eliminados = cursor.rowcount
+print(f'Registros eliminados: {registros_eliminados}')
 cursor.close()
 con.close()
