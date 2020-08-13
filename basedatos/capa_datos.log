@@ -1,0 +1,4 @@
+WARNING:root:Error
+INFO:root:nivel de info
+DEBUG:root:nivel debug
+ERROR:root:Ocurrio un error en la base de datos
