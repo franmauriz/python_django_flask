@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Domicilios</title>
+</head>
+<body>
+<h1>Bienvenido al sistema de Administracion de Domicilios</h1>
+<div>
+    Número de domicilios: {{no_domicilios}}
+</div>
+<div>
+    <a href="nuevo_domicilio">Agregar Domicilio</a>
+</div>
+<div>
+     <table border="0" cellspacing="15">
+        <thead>
+        <th>id</th>
+        <th>calle</th>
+        <th>no_calle</th>
+        <th>pais</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        </thead>
+        <tbody>
+        {% for domicilio in domicilios %}
+        <tr>
+            <td>{{domicilio.id}}</td>
+            <td>{{domicilio.calle}}</td>
+            <td>{{domicilio.no_calle}}</td>
+            <td>{{domicilio.pais}}</td>
+            <td><a href="detalle_domicilio/{{domicilio.id}}">Ver detalle</a></td>
+            <td><a href="editar_domicilio/{{domicilio.id}}">Modificar</a></td>
+            <td><a href="eliminar_domicilio/{{domicilio.id}}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div>
+    <a href="{% url 'index' %}">Ir a Administracion de Personas</a>
+</div>
+</body>
+</html>

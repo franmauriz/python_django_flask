@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenido</title>
+</head>
+<body>
+<h1>Bienvenido al sistema de Administracion de Personas</h1>
+<div>
+    Número de personas: {{no_personas}}
+</div>
+<div>
+    <a href="nueva_persona">Nueva Persona</a>
+    <table border="0" cellspacing="15">
+        <thead>
+        <th>id</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>Domicilio</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        </thead>
+        <tbody>
+        {% for persona in personas %}
+        <tr>
+            <td>{{persona.id}}</td>
+            <td>{{persona.nombre}}</td>
+            <td>{{persona.apellido}}</td>
+            <td>{{persona.email}}</td>
+            <td>{{persona.domicilio.calle}} {{persona.domicilio.no_calle}} , {{persona.domicilio.pais }}</td>
+            <td><a href="detalle_persona/{{persona.id}}">Ver detalle</a></td>
+            <td><a href="editar_persona/{{persona.id}}">Modificar</a></td>
+            <td><a href="eliminar_persona/{{persona.id}}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div>
+    <a href="domicilios">Ir a Administracion de Domicilios</a>
+</div>
+</body>
+</html>

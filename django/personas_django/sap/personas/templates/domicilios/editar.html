@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Domicilio</title>
+</head>
+<body>
+    <h1>Editar Domicilio:</h1>
+    <form method="POST">
+        <table>
+            {{formaDomicilio}}
+        </table>
+        <button type="submit">Enviar</button>
+        {% csrf_token %}
+    </form>
+ <div><a href="{% url 'index_domicilio' %}">Volver al inicio</a></div>
+</body>
+</html>

@@ -11,8 +11,6 @@ class Domicilio(models.Model):
         return f'Domicilio {self.id}:  {self.calle}  {self.no_calle} {self.pais}'
 
 
-
-
 class Persona(models.Model):
     nombre = models.CharField(max_length=255)
     apellido = models.CharField(max_length=255)
